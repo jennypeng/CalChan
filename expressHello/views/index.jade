@@ -1,0 +1,12 @@
+extend layout
+block content
+    form(action="/post-entry" method="post")
+        ul
+            li: input(type="text" name="post[user]" placeholder="Name")
+            li: textarea(type="text" name="post[content]" placeholder="What do you want?")
+            li: input(type="submit" value="Share")
+    .posts
+        dl
+            each val, index in posts
+                dt: h3= index
+                dd: p= val
